@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.0.3 (swiftlang-900.0.74.1 clang-900.0.39.2)"
+options: "2b9a6a76fa974a95df9b9f54f42883f6"
+build_time: [1515444859, 697535000]
+inputs:
+  "/Users/kendelchopp/Documents/iOS-Apps/Card Camera/Card Camera/SingleCardViewController.swift": [1515442929, 0]
+  "/Users/kendelchopp/Documents/iOS-Apps/Card Camera/Card Camera/ViewController.swift": [1515375247, 0]
+  "/Users/kendelchopp/Documents/iOS-Apps/Card Camera/Card Camera/AppDelegate.swift": [1515388534, 0]
