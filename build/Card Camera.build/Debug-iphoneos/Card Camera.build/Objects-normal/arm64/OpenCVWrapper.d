@@ -1,124 +1,126 @@
 dependencies: \
   /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/OpenCVWrapper.mm \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/opencv.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/opencv_modules.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cvdef.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/hal/interface.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cv_cpu_dispatch.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/version.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/base.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cvstd.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/ptr.inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/neon_utils.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/vsx_utils.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/traits.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/matx.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/saturate.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/fast_math.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/types.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/mat.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/bufferpool.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/mat.inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/persistence.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/operations.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cvstd.inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/utility.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/core_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/types_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/optim.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/ovx.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/calib3d.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/features2d.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/miniflann.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/defines.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/config.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/affine.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/calib3d/calib3d_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/flann_base.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/general.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/matrix.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/params.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/any.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/saving.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/nn_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/result_set.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/all_indices.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/kdtree_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/dynamic_bitset.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/dist.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/heap.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/allocator.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/random.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/kdtree_single_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/kmeans_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/logger.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/composite_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/linear_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/hierarchical_clustering_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/lsh_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/lsh_table.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/autotuned_index.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/ground_truth.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/index_testing.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/timer.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/flann/sampling.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/highgui.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgcodecs.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videoio.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/highgui/highgui_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgproc/imgproc_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgproc/types_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgcodecs/imgcodecs_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videoio/videoio_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgproc.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/ml.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/objdetect.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/objdetect/detection_based_tracker.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/objdetect/objdetect_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/photo.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/photo/photo_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/shape.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/shape/emdL1.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/shape/shape_transformer.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/shape/hist_cost.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/shape/shape_distance.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/warpers.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/warpers.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cuda.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cuda_types.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/cuda.inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/warpers_inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/matchers.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/motion_estimators.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/util.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/util_inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/camera.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/exposure_compensate.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/seam_finders.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/stitching/detail/blenders.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/video.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/video/tracking.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/video/background_segm.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/video/tracking_c.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/stabilizer.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/global_motion.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/optical_flow.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/motion_core.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/outlier_rejection.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/motion_stabilizing.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/frame_source.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/log.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/inpainting.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/fast_marching.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/fast_marching_inl.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/deblurring.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/wobble_suppression.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videostab/ring_buffer.hpp \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/imgcodecs/ios.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/core/core.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/PrefixHeader.pch \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/opencv.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/opencv_modules.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cvdef.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/hal/interface.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cv_cpu_dispatch.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/version.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/base.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cvstd.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/ptr.inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/neon_utils.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/vsx_utils.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/traits.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/matx.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/saturate.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/fast_math.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/types.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/mat.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/bufferpool.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/mat.inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/persistence.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/operations.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cvstd.inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/utility.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/core_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/types_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/optim.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/ovx.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/calib3d.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/features2d.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/miniflann.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/defines.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/config.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/affine.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/calib3d/calib3d_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/flann_base.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/general.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/matrix.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/params.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/any.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/saving.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/nn_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/result_set.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/all_indices.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/kdtree_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/dynamic_bitset.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/dist.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/heap.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/allocator.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/random.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/kdtree_single_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/kmeans_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/logger.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/composite_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/linear_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/hierarchical_clustering_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/lsh_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/lsh_table.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/autotuned_index.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/ground_truth.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/index_testing.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/timer.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/flann/sampling.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/highgui.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgcodecs.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videoio.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/highgui/highgui_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgproc/imgproc_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgproc/types_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgcodecs/imgcodecs_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videoio/videoio_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgproc.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/ml.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/ml/ml.inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/objdetect.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/objdetect/detection_based_tracker.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/objdetect/objdetect_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/photo.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/photo/photo_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/shape.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/shape/emdL1.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/shape/shape_transformer.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/shape/hist_cost.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/shape/shape_distance.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/warpers.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/warpers.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cuda.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cuda_types.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/cuda.inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/warpers_inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/matchers.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/motion_estimators.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/util.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/util_inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/camera.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/exposure_compensate.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/seam_finders.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/stitching/detail/blenders.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/video.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/video/tracking.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/video/background_segm.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/video/tracking_c.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/stabilizer.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/global_motion.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/optical_flow.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/motion_core.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/outlier_rejection.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/motion_stabilizing.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/frame_source.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/log.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/inpainting.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/fast_marching.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/fast_marching_inl.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/deblurring.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/wobble_suppression.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videostab/ring_buffer.hpp \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/imgcodecs/ios.h \
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/core/core.hpp \
   /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/OpenCVWrapper.h \
-  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/Card\ Camera/opencv2.framework/Headers/videoio/cap_ios.h
+  /Users/kendelchopp/Documents/iOS-Apps/Card\ Camera/opencv2.framework/Headers/videoio/cap_ios.h

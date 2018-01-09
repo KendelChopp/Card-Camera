@@ -22,7 +22,7 @@
 		02A8116E1FF4079F00B98868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A8116D1FF4079F00B98868 /* Assets.xcassets */; };
 		02A811711FF4079F00B98868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A8116F1FF4079F00B98868 /* LaunchScreen.storyboard */; };
 		02BBCDAD2002A5ED004B211B /* SingleCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */; };
-		02D721432004256900078201 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D721422004256900078201 /* opencv2.framework */; };
+		02D721482004407F00078201 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D721472004407F00078201 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,8 @@
 		02A811701FF4079F00B98868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A811721FF4079F00B98868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardViewController.swift; sourceTree = "<group>"; };
-		02D721422004256900078201 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Downloads/opencv2.framework; sourceTree = "<group>"; };
+		02D7214420043E7F00078201 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		02D721472004407F00078201 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02D721432004256900078201 /* opencv2.framework in Frameworks */,
+				02D721482004407F00078201 /* opencv2.framework in Frameworks */,
 				029B39992002F5050025FE62 /* QuartzCore.framework in Frameworks */,
 				029B399B2002F50D0025FE62 /* CoreMedia.framework in Frameworks */,
 				029B399D2002F5130025FE62 /* CoreImage.framework in Frameworks */,
@@ -71,7 +72,7 @@
 		029B39972002F5050025FE62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02D721422004256900078201 /* opencv2.framework */,
+				02D721472004407F00078201 /* opencv2.framework */,
 				029B39A62002F52D0025FE62 /* CoreVideo.framework */,
 				029B39A42002F5290025FE62 /* AssetsLibrary.framework */,
 				029B39A22002F5230025FE62 /* AVFoundation.framework */,
@@ -112,6 +113,7 @@
 				02A8116F1FF4079F00B98868 /* LaunchScreen.storyboard */,
 				02A811721FF4079F00B98868 /* Info.plist */,
 				029B39A92002F5E40025FE62 /* OpenCVWrapper.h */,
+				02D7214420043E7F00078201 /* PrefixHeader.pch */,
 				029B39AA2002F5E40025FE62 /* OpenCVWrapper.mm */,
 				029B39A82002F5E30025FE62 /* Card Camera-Bridging-Header.h */,
 			);
@@ -334,7 +336,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M23826A23;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Card\\ Camera";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Card Camera/PrefixHeader.pch";
 				INFOPLIST_FILE = "Card Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -354,7 +360,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M23826A23;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Card\\ Camera";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Card Camera/PrefixHeader.pch";
 				INFOPLIST_FILE = "Card Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
