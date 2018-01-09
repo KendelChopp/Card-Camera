@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var golfButton: UIButton!
-    @IBOutlet var twentyFourButton: UIButton!
     @IBOutlet var singleButton: UIButton!
+    @IBOutlet var singleButtonLive: UIButton!
+    @IBOutlet var golfButton: UIButton!
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         golfButton.layer.cornerRadius = 5
-        twentyFourButton.layer.cornerRadius = 5
+        singleButtonLive.layer.cornerRadius = 5
         singleButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view, typically from a nib.
     }

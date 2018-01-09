@@ -50,5 +50,10 @@ class SingleCardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @IBAction func exit(_ sender: Any) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        }
+    }
+    
 }

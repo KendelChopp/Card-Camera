@@ -216,6 +216,7 @@ SWIFT_CLASS("_TtC11Card_Camera24SingleCardViewController")
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)imageTappedWithTapGestureRecognizer:(UITapGestureRecognizer * _Nonnull)tapGestureRecognizer;
 - (void)didReceiveMemoryWarning;
+- (IBAction)exit:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
