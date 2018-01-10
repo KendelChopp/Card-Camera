@@ -23,6 +23,44 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
 vector<cv::Mat> numbers;
 vector<cv::Mat> suits;
 
+@interface SingleCardLiveCamera()
+{
+}
+@end
+@implementation SingleCardLiveCamera
+{
+    UILabel * cardLabel;
+    int count;
+}
+
+-(void) setupLive:(UILabel *)label
+{
+    cardLabel = label;
+    count = 0;
+}
+//Processese the images by drawing the contour lines
+- (void)processImage:(Mat&)image
+{
+    image.copyTo(currentImage);
+    if (count >= 4) {
+        @try {
+            NSString *cardString = [self identifyCard];
+            if (currentCard != prevCard) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cardLabel.text = cardString;
+                });
+            }
+        }
+        @catch(...) {
+            cout << "ERROR!\n";
+        }
+        count = 0;
+    } else count++;
+    //(void) [self drawContours:image];
+}
+
+@end
+
 
 @interface SingleCardCamera()
 {
@@ -36,48 +74,70 @@ vector<cv::Mat> suits;
 - (void)processImage:(Mat&)image
 {
     image.copyTo(currentImage);
-    vector<cv::Mat>  contours;
-    //vector<vector<cv::Point>>  hierarchy;
-    cv::Mat im = [CameraFunctions preprocess_video:image];
-    cv::findContours(im, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-    std::sort(contours.begin(), contours.end(), compareContourAreas);
-    vector<cv::Mat>  cards;
-    int numFoundCards = 0;
-    for (int i = 0; i < contours.size(); i++) {
-        if (numFoundCards >= totalCards) break;
-        double area = contourArea(contours[i]);
-        if (area < CARD_MIN_AREA) break;
-        double arcLength = cv::arcLength(contours[i], true);
-        cv::Mat approx;
-        approxPolyDP(contours[i], approx, 0.01*arcLength, true);
-        if (approx.rows == 4) {
-            numFoundCards++;
-            for (int i = 0; i < 3; i++) {
-                cv::line(image, cv::Point(approx.at<int>(i, 0), approx.at<int>(i, 1)),
-                         cv::Point(approx.at<int>(i+1, 0), approx.at<int>(i+1, 1)), cv::Scalar(0,255,0, 255), 25);
-                
-            }
-            cv::line(image, cv::Point(approx.at<int>(3, 0), approx.at<int>(3, 1)),
-                     cv::Point(approx.at<int>(0, 0), approx.at<int>(0, 1)), cv::Scalar(0,255,0, 255), 25);
-        }
-    }
-    
+    (void) [self drawContours:image];
 }
+
+@end
+
+
+@interface CardCameraWrapper () <CvVideoCameraDelegate>
+{
+}
+@end
+
+@implementation CardCameraWrapper
+{
+    UIViewController * viewController;
+    UIImageView * imageView;
+    CvVideoCamera * videoCamera;
+    //UILabel * cardLabel;
+
+
+}
+
+//Camera initializer
+-(id)initWithController:(UIViewController*)c andImageView:(UIImageView*)iv withNumCards:(int)numCards
+{
+    viewController = c;
+    imageView = iv;
+    currentCard = -1;
+    totalCards = numCards;
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
+    videoCamera.delegate = self;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetHigh;
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    videoCamera.rotateVideo = YES;
+    videoCamera.defaultFPS = 30;
+    videoCamera.grayscaleMode = NO;
+    return self;
+}
+-(void)start
+{
+    (void)[videoCamera start];
+}
+-(void)stop
+{
+    (void)[videoCamera stop];
+}
+
 //Method called that identifies the card in the image
 - (NSString *)identifyCard
 {
     cv::Mat modifiedImage;
-    
+    prevCard = currentCard;
     modifiedImage = [CameraFunctions preprocess_video:currentImage];
     
     vector<cv::Mat> cards = [CameraFunctions findCardContours:modifiedImage withNumCards:totalCards];
     if (cards.size() < 1) {
+        currentCard = -1;
         return @"NO CARD FOUND";
     }
     cv::Mat card = [CameraFunctions preprocess_cardCorner:cards[0] andSourceImage:currentImage];
     //card = [CardCameraWrapper getSuit:card];
     cv::Rect bounds = [CameraFunctions getCornerBounded:card];
     if (bounds.height <= 10) {
+        currentCard = -1;
         return @"NO CARD FOUND";
     }
     
@@ -129,6 +189,7 @@ vector<cv::Mat> suits;
     numberArea(boundingRect(numberNonZero)).copyTo(numberArea);
     resize(numberArea,numberArea, cv::Size(62,34));
     
+    currentCard = 13*maxIndex;
     maxIndex = -1;
     maxValue = MIN_THRESH;
     for (int i = 0; i < numbers.size(); i++) {
@@ -139,6 +200,7 @@ vector<cv::Mat> suits;
             maxValue = score;
         }
     }
+    currentCard = currentCard + maxIndex;
     NSString *number;
     if (maxIndex == -1) {
         number = @"UNKNOWN";
@@ -154,7 +216,9 @@ vector<cv::Mat> suits;
         number = @"K";
     } else if (maxIndex == 13) {
         number = @"JOKER";
+        currentCard = 52;
     }
+   
     NSString *cardString = [number stringByAppendingString:@" "];
     cardString = [cardString stringByAppendingString:suit];
     if (maxIndex == 13) {
@@ -162,51 +226,34 @@ vector<cv::Mat> suits;
     }
     return cardString;
 }
-@end
 
-
-@interface CardCameraWrapper () <CvVideoCameraDelegate>
-{
+-(void) drawContours:(cv::Mat)image {
+    vector<cv::Mat>  contours;
+    //vector<vector<cv::Point>>  hierarchy;
+    cv::Mat im = [CameraFunctions preprocess_video:image];
+    cv::findContours(im, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+    std::sort(contours.begin(), contours.end(), compareContourAreas);
+    vector<cv::Mat>  cards;
+    int numFoundCards = 0;
+    for (int i = 0; i < contours.size(); i++) {
+        if (numFoundCards >= totalCards) break;
+        double area = contourArea(contours[i]);
+        if (area < CARD_MIN_AREA) break;
+        double arcLength = cv::arcLength(contours[i], true);
+        cv::Mat approx;
+        approxPolyDP(contours[i], approx, 0.01*arcLength, true);
+        if (approx.rows == 4) {
+            numFoundCards++;
+            for (int i = 0; i < 3; i++) {
+                cv::line(image, cv::Point(approx.at<int>(i, 0), approx.at<int>(i, 1)),
+                         cv::Point(approx.at<int>(i+1, 0), approx.at<int>(i+1, 1)), cv::Scalar(0,255,0, 255), 25);
+                
+            }
+            cv::line(image, cv::Point(approx.at<int>(3, 0), approx.at<int>(3, 1)),
+                     cv::Point(approx.at<int>(0, 0), approx.at<int>(0, 1)), cv::Scalar(0,255,0, 255), 25);
+        }
+    }
 }
-@end
-
-@implementation CardCameraWrapper
-{
-    UIViewController * viewController;
-    UIImageView * imageView;
-    CvVideoCamera * videoCamera;
-    //UILabel * cardLabel;
-    int currentCard;
-
-
-}
-
-//Camera initializer
--(id)initWithController:(UIViewController*)c andImageView:(UIImageView*)iv withNumCards:(int)numCards
-{
-    viewController = c;
-    imageView = iv;
-    currentCard = -1;
-    totalCards = numCards;
-    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
-    videoCamera.delegate = self;
-    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetHigh;
-    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    videoCamera.rotateVideo = YES;
-    videoCamera.defaultFPS = 30;
-    videoCamera.grayscaleMode = NO;
-    return self;
-}
--(void)start
-{
-    (void)[videoCamera start];
-}
--(void)stop
-{
-    (void)[videoCamera stop];
-}
-
 
 - (void)processImage:(Mat&)image
 {

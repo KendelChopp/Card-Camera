@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02432A7420068E7F00EAE094 /* SingleCardLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02432A7320068E7E00EAE094 /* SingleCardLiveViewController.swift */; };
 		029B39992002F5050025FE62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029B39982002F5050025FE62 /* QuartzCore.framework */; };
 		029B399B2002F50D0025FE62 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029B399A2002F50D0025FE62 /* CoreMedia.framework */; };
 		029B399D2002F5130025FE62 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029B399C2002F5130025FE62 /* CoreImage.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02432A7320068E7E00EAE094 /* SingleCardLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardLiveViewController.swift; sourceTree = "<group>"; };
 		029B39982002F5050025FE62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		029B399A2002F50D0025FE62 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		029B399C2002F5130025FE62 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,7 @@
 				02A811661FF4079F00B98868 /* AppDelegate.swift */,
 				02A811681FF4079F00B98868 /* ViewController.swift */,
 				02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */,
+				02432A7320068E7E00EAE094 /* SingleCardLiveViewController.swift */,
 				02A8116A1FF4079F00B98868 /* Main.storyboard */,
 				02A8116D1FF4079F00B98868 /* Assets.xcassets */,
 				02A8116F1FF4079F00B98868 /* LaunchScreen.storyboard */,
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02432A7420068E7F00EAE094 /* SingleCardLiveViewController.swift in Sources */,
 				02BBCDAD2002A5ED004B211B /* SingleCardViewController.swift in Sources */,
 				02A811691FF4079F00B98868 /* ViewController.swift in Sources */,
 				029B39AB2002F5E40025FE62 /* OpenCVWrapper.mm in Sources */,

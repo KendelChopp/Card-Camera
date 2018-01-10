@@ -57,6 +57,9 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <color key="tintColor" red="0.90588235289999997" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Signle Card Live"/>
+                                <connections>
+                                    <segue destination="KHs-Oa-H4f" kind="show" id="qK9-Ub-4Vu"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card4" translatesAutoresizingMaskIntoConstraints="NO" id="v54-EE-Tbq">
                                 <rect key="frame" x="105" y="83" width="165" height="207"/>
@@ -230,6 +233,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RY0-1C-pbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1116" y="117"/>
+        </scene>
+        <!--Single Card Live View Controller-->
+        <scene sceneID="YFh-w8-xs9">
+            <objects>
+                <viewController id="KHs-Oa-H4f" customClass="SingleCardLiveViewController" customModule="Card_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dT7-eg-XZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-ek-AGG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-Ek-9YK">
+                                <rect key="frame" x="16" y="20" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="6E3-Wk-j5G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhE-wb-Vrq">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="WUO-hH-5Qs"/>
+                                    <constraint firstAttribute="height" constant="30" id="o3H-b0-Ziy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.90588235289999997" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="KHs-Oa-H4f" eventType="touchUpInside" id="Uar-cj-9oZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.031372549020000001" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="trailing" secondItem="TxQ-jT-8gj" secondAttribute="trailing" id="56A-g6-kAj"/>
+                            <constraint firstItem="7Ac-Ek-9YK" firstAttribute="centerX" secondItem="dT7-eg-XZJ" secondAttribute="centerX" id="Dmi-vH-FD1"/>
+                            <constraint firstItem="7Ac-Ek-9YK" firstAttribute="top" secondItem="TxQ-jT-8gj" secondAttribute="top" id="HGL-im-e4d"/>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="top" secondItem="dT7-eg-XZJ" secondAttribute="top" id="Qai-6m-fIn"/>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="leading" secondItem="TxQ-jT-8gj" secondAttribute="leading" id="QvW-sA-Ygc"/>
+                            <constraint firstItem="TxQ-jT-8gj" firstAttribute="trailing" secondItem="7Ac-Ek-9YK" secondAttribute="trailing" constant="16" id="SdV-Uf-F0Y"/>
+                            <constraint firstItem="OhE-wb-Vrq" firstAttribute="leading" secondItem="TxQ-jT-8gj" secondAttribute="leading" constant="16" id="bRu-RK-1Mq"/>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="centerY" secondItem="dT7-eg-XZJ" secondAttribute="centerY" id="clI-sK-bxe"/>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="bottom" secondItem="TxQ-jT-8gj" secondAttribute="bottom" id="gRQ-vt-JEV"/>
+                            <constraint firstItem="7Ac-Ek-9YK" firstAttribute="leading" secondItem="TxQ-jT-8gj" secondAttribute="leading" constant="16" id="vnO-w8-rPi"/>
+                            <constraint firstItem="rZG-ek-AGG" firstAttribute="centerX" secondItem="dT7-eg-XZJ" secondAttribute="centerX" id="vpm-hL-puf"/>
+                            <constraint firstItem="OhE-wb-Vrq" firstAttribute="top" secondItem="TxQ-jT-8gj" secondAttribute="top" id="wdh-k3-ivc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TxQ-jT-8gj"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="rZG-ek-AGG" id="4QH-cz-jhi"/>
+                        <outlet property="cardLabel" destination="7Ac-Ek-9YK" id="XEJ-gv-a2n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xq-Zo-NHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="773"/>
         </scene>
     </scenes>
     <resources>

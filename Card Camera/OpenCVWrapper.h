@@ -34,17 +34,25 @@ extern int const MIN_THRESH;
 @interface CardCameraWrapper : NSObject
 {
     int totalCards;
-#ifdef __cplusplus
+    int currentCard;
+    int prevCard;
+    #ifdef __cplusplus
     cv::Mat currentImage;
-#endif
+    #endif
 }
+#ifdef __cplusplus
+-(void) drawContours:(cv::Mat)image;
+#endif
 -(id)initWithController:(UIViewController*)c andImageView:(UIImageView*)iv withNumCards:(int)numCards;
 -(void)start;
 -(void)stop;
-
+-(NSString *)identifyCard;
 @end
 
 
 @interface SingleCardCamera : CardCameraWrapper
--(NSString *)identifyCard;
+
+@end
+@interface SingleCardLiveCamera : CardCameraWrapper
+-(void) setupLive:(UILabel *)label;
 @end
