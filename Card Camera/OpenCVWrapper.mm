@@ -13,34 +13,6 @@
 #import <opencv2/videoio/cap_ios.h>
 using namespace std;
 using namespace cv;
-
-
-
-@interface CardCameraWrapper () <CvVideoCameraDelegate>
-{
-}
-@end
-
-@implementation CardCameraWrapper
-{
-    UIViewController * viewController;
-    UIImageView * imageView;
-    CvVideoCamera * videoCamera;
-    //UILabel * cardLabel;
-    int currentCard;
-    int totalCards;
-    cv::Mat currentImage;
-    vector<cv::Mat> numbers;
-    vector<cv::Mat> suits;
-}
-
-
-static int CARD_MIN_AREA = 6000;
-static int CORNER_WIDTH = 26;
-static int CORNER_HEIGHT = 80;
-static int SUIT_HEIGHT = 25;
-static int minThresh = 0;
-
 //The comparison methods for sorting countours from largest -> smallest
 bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Point> contour2 )
 {
@@ -48,69 +20,72 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     double j = fabs( contourArea(cv::Mat(contour2)) );
     return ( i > j );
 }
+vector<cv::Mat> numbers;
+vector<cv::Mat> suits;
 
-//Load in the reference number images
--(void) loadTrainingNumber: (UIImage *)image
+
+@interface SingleCardCamera()
 {
-    cv::Mat trainingImage;
-    UIImageToMat(image, trainingImage);
-    numbers.push_back(trainingImage);
 }
-//Load in the reference suit images
--(void) loadTrainingSuit: (UIImage *)image
+@end
+@implementation SingleCardCamera
 {
-    cv::Mat trainingImage;
-    UIImageToMat(image, trainingImage);
-    suits.push_back(trainingImage);
+    
 }
-//Camera initializer
--(id)initWithController:(UIViewController*)c andImageView:(UIImageView*)iv withNumCards:(int)numCards
+//Processese the images by drawing the contour lines
+- (void)processImage:(Mat&)image
 {
-    viewController = c;
-    imageView = iv;
-    currentCard = -1;
-    totalCards = numCards;
-    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
-    videoCamera.delegate = self;
-    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetHigh;
-    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    videoCamera.rotateVideo = YES;
-    videoCamera.defaultFPS = 30;
-    videoCamera.grayscaleMode = NO;
-    return self;
-}
--(void)start
-{
-    (void)[videoCamera start];
-}
--(void)stop
-{
-    (void)[videoCamera stop];
+    image.copyTo(currentImage);
+    vector<cv::Mat>  contours;
+    //vector<vector<cv::Point>>  hierarchy;
+    cv::Mat im = [CameraFunctions preprocess_video:image];
+    cv::findContours(im, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+    std::sort(contours.begin(), contours.end(), compareContourAreas);
+    vector<cv::Mat>  cards;
+    int numFoundCards = 0;
+    for (int i = 0; i < contours.size(); i++) {
+        if (numFoundCards >= totalCards) break;
+        double area = contourArea(contours[i]);
+        if (area < CARD_MIN_AREA) break;
+        double arcLength = cv::arcLength(contours[i], true);
+        cv::Mat approx;
+        approxPolyDP(contours[i], approx, 0.01*arcLength, true);
+        if (approx.rows == 4) {
+            numFoundCards++;
+            for (int i = 0; i < 3; i++) {
+                cv::line(image, cv::Point(approx.at<int>(i, 0), approx.at<int>(i, 1)),
+                         cv::Point(approx.at<int>(i+1, 0), approx.at<int>(i+1, 1)), cv::Scalar(0,255,0, 255), 25);
+                
+            }
+            cv::line(image, cv::Point(approx.at<int>(3, 0), approx.at<int>(3, 1)),
+                     cv::Point(approx.at<int>(0, 0), approx.at<int>(0, 1)), cv::Scalar(0,255,0, 255), 25);
+        }
+    }
+    
 }
 //Method called that identifies the card in the image
 - (NSString *)identifyCard
 {
     cv::Mat modifiedImage;
     
-    modifiedImage = [CardCameraWrapper preprocess_video:currentImage];
+    modifiedImage = [CameraFunctions preprocess_video:currentImage];
     
-    vector<cv::Mat> cards = [self findCardContours:modifiedImage];
+    vector<cv::Mat> cards = [CameraFunctions findCardContours:modifiedImage withNumCards:totalCards];
     if (cards.size() < 1) {
         return @"NO CARD FOUND";
     }
-    cv::Mat card = [CardCameraWrapper preprocess_cardCorner:cards[0] andSourceImage:currentImage];
+    cv::Mat card = [CameraFunctions preprocess_cardCorner:cards[0] andSourceImage:currentImage];
     //card = [CardCameraWrapper getSuit:card];
-    cv::Rect bounds = [CardCameraWrapper getCornerBounded:card];
+    cv::Rect bounds = [CameraFunctions getCornerBounded:card];
     if (bounds.height <= 10) {
         return @"NO CARD FOUND";
     }
     
     if (bounds.height > 21) {
         cv::Rect newFrame = cv::Rect(0,bounds.height - 20 , card.cols, card.rows - (bounds.height - 20));
-
+        
         card(newFrame).copyTo(card);
-        bounds = [CardCameraWrapper getCornerBounded:card];
+        bounds = [CameraFunctions getCornerBounded:card];
     }
     cv::Mat finalCorner;
     card(bounds).copyTo(finalCorner);
@@ -125,7 +100,7 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     cv::Mat tempResult;
     int score;
     int maxIndex = -1;
-    int maxValue = minThresh;
+    int maxValue = MIN_THRESH;
     for (int i = 0; i < suits.size(); i++) {
         cv::compare(suitArea, suits.at(i), tempResult, cv::CMP_EQ);
         score = countNonZero(tempResult);
@@ -153,9 +128,9 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     findNonZero(numberArea, numberNonZero);
     numberArea(boundingRect(numberNonZero)).copyTo(numberArea);
     resize(numberArea,numberArea, cv::Size(62,34));
-
+    
     maxIndex = -1;
-    maxValue = minThresh;
+    maxValue = MIN_THRESH;
     for (int i = 0; i < numbers.size(); i++) {
         cv::compare(numberArea, numbers.at(i), tempResult, cv::CMP_EQ);
         score = countNonZero(tempResult);
@@ -187,50 +162,92 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     }
     return cardString;
 }
-//Processese the images by drawing the contour lines
+@end
+
+
+@interface CardCameraWrapper () <CvVideoCameraDelegate>
+{
+}
+@end
+
+@implementation CardCameraWrapper
+{
+    UIViewController * viewController;
+    UIImageView * imageView;
+    CvVideoCamera * videoCamera;
+    //UILabel * cardLabel;
+    int currentCard;
+
+
+}
+
+//Camera initializer
+-(id)initWithController:(UIViewController*)c andImageView:(UIImageView*)iv withNumCards:(int)numCards
+{
+    viewController = c;
+    imageView = iv;
+    currentCard = -1;
+    totalCards = numCards;
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
+    videoCamera.delegate = self;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetHigh;
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    videoCamera.rotateVideo = YES;
+    videoCamera.defaultFPS = 30;
+    videoCamera.grayscaleMode = NO;
+    return self;
+}
+-(void)start
+{
+    (void)[videoCamera start];
+}
+-(void)stop
+{
+    (void)[videoCamera stop];
+}
+
+
 - (void)processImage:(Mat&)image
 {
-    image.copyTo(currentImage);
-    vector<cv::Mat>  contours;
-    //vector<vector<cv::Point>>  hierarchy;
-    cv::Mat im = [CardCameraWrapper preprocess_video:image];
-    cv::findContours(im, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-    std::sort(contours.begin(), contours.end(), compareContourAreas);
-    vector<cv::Mat>  cards;
-    int numFoundCards = 0;
-    for (int i = 0; i < contours.size(); i++) {
-        if (numFoundCards >= totalCards) break;
-        double area = contourArea(contours[i]);
-        if (area < CARD_MIN_AREA) break;
-        double arcLength = cv::arcLength(contours[i], true);
-        cv::Mat approx;
-        approxPolyDP(contours[i], approx, 0.01*arcLength, true);
-        if (approx.rows == 4) {
-            numFoundCards++;
-            for (int i = 0; i < 3; i++) {
-                cv::line(image, cv::Point(approx.at<int>(i, 0), approx.at<int>(i, 1)),
-                         cv::Point(approx.at<int>(i+1, 0), approx.at<int>(i+1, 1)), cv::Scalar(0,255,0, 255), 25);
-                
-            }
-            cv::line(image, cv::Point(approx.at<int>(3, 0), approx.at<int>(3, 1)),
-                     cv::Point(approx.at<int>(0, 0), approx.at<int>(0, 1)), cv::Scalar(0,255,0, 255), 25);
-        }
-    }
+  
     
 }
 
-//Returns a thresholded version of the input
-+(cv::Mat) preprocess_video:(cv::Mat)input
+@end
+
+@interface CameraFunctions()
 {
-    cv::Mat modify;
-    cvtColor(input, modify, CV_BGR2GRAY);
-    cv::GaussianBlur(modify, modify, cvSize(5,5),0);
-    //Improvement may be made by changing the threshold level depending on the light level
-    cv::threshold(modify, modify, 120, 255, CV_THRESH_BINARY);
-    return modify;
+}
+@end
+@implementation CameraFunctions
+{
+    
+}
+int const CARD_MIN_AREA = 6000;
+int const CORNER_WIDTH = 26;
+int const CORNER_HEIGHT = 80;
+int const SUIT_HEIGHT = 25;
+int const MIN_THRESH = 0;
+
+//Load in the reference number images
++(void) loadTrainingNumber: (UIImage *)image
+{
+    if (numbers.size() > 14) return;
+    cv::Mat trainingImage;
+    UIImageToMat(image, trainingImage);
+    numbers.push_back(trainingImage);
+}
+//Load in the reference suit images
++(void) loadTrainingSuit: (UIImage *)image
+{
+    if (suits.size() > 14) return;
+    cv::Mat trainingImage;
+    UIImageToMat(image, trainingImage);
+    suits.push_back(trainingImage);
 }
 //Returns a vector of suspected cards found in a preprocessed image
--(vector<cv::Mat>) findCardContours:(cv::Mat)preprocessedImage {
++(vector<cv::Mat>) findCardContours:(cv::Mat)preprocessedImage withNumCards:(int)totalCards {
     vector<cv::Mat>  contours;
     cv::findContours(preprocessedImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
     std::sort(contours.begin(), contours.end(), compareContourAreas);
@@ -250,6 +267,15 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     }
     return cards;
 }
+//Returns a thresholded version of the input
++(cv::Mat) preprocess_video:(cv::Mat)input
+{
+    cv::Mat modify;
+    cvtColor(input, modify, CV_BGR2GRAY);
+    cv::GaussianBlur(modify, modify, cvSize(5,5),0);
+    cv::threshold(modify, modify, 120, 255, CV_THRESH_BINARY);
+    return modify;
+}
 //Crop to the corner of the card and threshold it
 +(cv::Mat) preprocess_cardCorner:(cv::Mat)contour andSourceImage:(cv::Mat)sourceImage
 {
@@ -263,13 +289,14 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     pts[1] = cv::Point(approx.at<int>(1, 0), approx.at<int>(1, 1));
     pts[2] = cv::Point(approx.at<int>(2, 0), approx.at<int>(2, 1));
     pts[3] = cv::Point(approx.at<int>(3, 0), approx.at<int>(3, 1));
-    cv::Mat warpedCard = [CardCameraWrapper warpCard:sourceImage withPoints:pts withWidth:rect.width withHeight:rect.height];
+    cv::Mat warpedCard = [CameraFunctions warpCard:sourceImage withPoints:pts withWidth:rect.width withHeight:rect.height];
     cv::Rect crop = cv::Rect(0,warpedCard.rows - 1 - CORNER_WIDTH, CORNER_HEIGHT, CORNER_WIDTH);
     cv::Mat corner;
     warpedCard(crop).copyTo(corner);
     cv::threshold(corner, corner, 120, 255, CV_THRESH_BINARY_INV);
     return corner;
 }
+
 //Do a perspective transformation to get a flattened 200x300 image of the card
 +(cv::Mat) warpCard:(cv::Mat)originalImage withPoints:(cv::Point2f[4])points withWidth:(int)width withHeight:(int)height
 {
@@ -338,8 +365,10 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     cvtColor(card, card, CV_BGR2GRAY);
     return card;
 }
+
 //Bound the corner to the white pixels only
-+(cv::Rect) getCornerBounded:(cv::Mat)corner {
++(cv::Rect) getCornerBounded:(cv::Mat)corner
+{
     cv::Mat points;
     findNonZero(corner, points);
     cv::Rect minRect;

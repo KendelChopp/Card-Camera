@@ -225,9 +225,9 @@ SWIFT_CLASS("_TtC11Card_Camera24SingleCardViewController")
 
 SWIFT_CLASS("_TtC11Card_Camera14ViewController")
 @interface ViewController : UIViewController
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified golfButton;
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified twentyFourButton;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified singleButton;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified singleButtonLive;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified golfButton;
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
