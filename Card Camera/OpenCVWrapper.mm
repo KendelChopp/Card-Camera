@@ -20,8 +20,127 @@ bool compareContourAreas ( std::vector<cv::Point> contour1, std::vector<cv::Poin
     double j = fabs( contourArea(cv::Mat(contour2)) );
     return ( i > j );
 }
+bool compareLocations ( std::vector<cv::Point> contour1, std::vector<cv::Point> contour2 )
+{
+    double i = contour1[0].x;
+    double j = contour2[0].x;
+    return ( i > j );
+}
 vector<cv::Mat> numbers;
 vector<cv::Mat> suits;
+
+@interface GolfCamera()
+{
+}
+@end
+@implementation GolfCamera
+{
+    bool hasBlock;
+}
+//Processese the images by drawing the contour lines
+- (void)processImage:(Mat&)image
+{
+    image.copyTo(currentImage);
+    (void) [self drawContours:image];
+}
+
+-(int)getScore
+{
+    cv::Mat modifiedImage;
+    prevCard = currentCard;
+    modifiedImage = [CameraFunctions preprocess_video:currentImage];
+    int values[6];
+    vector<cv::Mat> cards = [CameraFunctions findCardContours:modifiedImage withNumCards:totalCards];
+    if (cards.size() != 6) {
+        currentCard = -1;
+        return -15;
+    }
+    std::sort(cards.begin(),cards.end(), compareLocations);
+    for (int i = 0; i < 6; i++) {
+        cv::Mat card = [CameraFunctions preprocess_cardCorner:cards[i] andSourceImage:currentImage];
+        //card = [CardCameraWrapper getSuit:card];
+        cv::Rect bounds = [CameraFunctions getCornerBounded:card];
+        if (bounds.height <= 10) {
+            currentCard = -1;
+            return -15;
+        }
+        if (bounds.height > 21) {
+            cv::Rect newFrame = cv::Rect(0,bounds.height - 20 , card.cols, card.rows - (bounds.height - 20));
+            
+            card(newFrame).copyTo(card);
+            bounds = [CameraFunctions getCornerBounded:card];
+        }
+        cv::Mat finalCorner;
+        card(bounds).copyTo(finalCorner);
+
+        cv::Mat tempResult;
+        int score;
+        int maxIndex = -1;
+        int maxValue = MIN_THRESH;
+
+        cv::Mat numberArea;
+        cv::Rect numberFrame = cv::Rect(0,0,finalCorner.cols - SUIT_HEIGHT - 1, finalCorner.rows);
+        finalCorner(numberFrame).copyTo(numberArea);
+        cv::Mat numberNonZero;
+        findNonZero(numberArea, numberNonZero);
+        numberArea(boundingRect(numberNonZero)).copyTo(numberArea);
+        resize(numberArea,numberArea, cv::Size(62,34));
+
+        for (int i = 0; i < numbers.size(); i++) {
+            cv::compare(numberArea, numbers.at(i), tempResult, cv::CMP_EQ);
+            score = countNonZero(tempResult);
+            if (score > maxValue) {
+                maxIndex = i;
+                maxValue = score;
+            }
+        }
+        currentCard = currentCard + maxIndex;
+
+        if (maxIndex == -1) {
+            return -15;
+        } else if (maxIndex >= 0 && maxIndex <= 9) {
+            values[i] = maxIndex + 1;
+        } else if (maxIndex == 10 || maxIndex == 11) {
+            values[i] = 10;
+        } else if (maxIndex == 12) {
+            values[i] = 0;
+        } else if (maxIndex == 13) {
+            values[i] = -2;
+        }
+        
+    }
+
+    return [self scoreArray:values];
+}
+-(bool)getBlock
+{
+    return hasBlock;
+}
+-(int)scoreArray: (int[6])cardValues
+{
+    int blockFlag = false;
+    int score = 0;
+    cout << "Values: [";
+    for (int i = 0; i < 3; i++) {
+        if (cardValues[i*2] == cardValues[i*2+1]) {
+            if (cardValues[i*2] == -2) {
+                score -= 4;
+            }
+            if (i < 2) {
+                if (cardValues[i*2] == cardValues[i*2+2] && cardValues[i*2] == cardValues[i*2+3]) {
+                    blockFlag = true;
+                }
+            }
+        } else {
+            score += cardValues[i*2] + cardValues[i*2+1];
+        }
+        cout << " " << cardValues[i];
+    }
+    cout << "]\n";
+    hasBlock = blockFlag;
+    return score;
+}
+@end
 
 @interface SingleCardLiveCamera()
 {
@@ -120,6 +239,8 @@ vector<cv::Mat> suits;
 {
     (void)[videoCamera stop];
 }
+
+
 
 //Method called that identifies the card in the image
 - (NSString *)identifyCard
@@ -231,7 +352,7 @@ vector<cv::Mat> suits;
     vector<cv::Mat>  contours;
     //vector<vector<cv::Point>>  hierarchy;
     cv::Mat im = [CameraFunctions preprocess_video:image];
-    cv::findContours(im, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+    cv::findContours(im, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
     std::sort(contours.begin(), contours.end(), compareContourAreas);
     vector<cv::Mat>  cards;
     int numFoundCards = 0;
@@ -296,7 +417,7 @@ int const MIN_THRESH = 0;
 //Returns a vector of suspected cards found in a preprocessed image
 +(vector<cv::Mat>) findCardContours:(cv::Mat)preprocessedImage withNumCards:(int)totalCards {
     vector<cv::Mat>  contours;
-    cv::findContours(preprocessedImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+    cv::findContours(preprocessedImage, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
     std::sort(contours.begin(), contours.end(), compareContourAreas);
     vector<cv::Mat>  cards;
     int numFound = 0;

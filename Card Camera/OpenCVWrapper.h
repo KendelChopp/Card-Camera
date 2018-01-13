@@ -51,8 +51,11 @@ extern int const MIN_THRESH;
 
 
 @interface SingleCardCamera : CardCameraWrapper
-
 @end
 @interface SingleCardLiveCamera : CardCameraWrapper
 -(void) setupLive:(UILabel *)label;
+@end
+@interface GolfCamera : CardCameraWrapper
+-(bool)getBlock;
+-(int)getScore;
 @end

@@ -23,6 +23,7 @@
 		02A8116E1FF4079F00B98868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A8116D1FF4079F00B98868 /* Assets.xcassets */; };
 		02A811711FF4079F00B98868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A8116F1FF4079F00B98868 /* LaunchScreen.storyboard */; };
 		02BBCDAD2002A5ED004B211B /* SingleCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */; };
+		02D4060A20098099003893ED /* GolfCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4060920098099003893ED /* GolfCameraViewController.swift */; };
 		02D721482004407F00078201 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D721472004407F00078201 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		02A811701FF4079F00B98868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A811721FF4079F00B98868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardViewController.swift; sourceTree = "<group>"; };
+		02D4060920098099003893ED /* GolfCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfCameraViewController.swift; sourceTree = "<group>"; };
 		02D7214420043E7F00078201 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		02D721472004407F00078201 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				02A811681FF4079F00B98868 /* ViewController.swift */,
 				02BBCDAC2002A5ED004B211B /* SingleCardViewController.swift */,
 				02432A7320068E7E00EAE094 /* SingleCardLiveViewController.swift */,
+				02D4060920098099003893ED /* GolfCameraViewController.swift */,
 				02A8116A1FF4079F00B98868 /* Main.storyboard */,
 				02A8116D1FF4079F00B98868 /* Assets.xcassets */,
 				02A8116F1FF4079F00B98868 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 				02432A7420068E7F00EAE094 /* SingleCardLiveViewController.swift in Sources */,
 				02BBCDAD2002A5ED004B211B /* SingleCardViewController.swift in Sources */,
 				02A811691FF4079F00B98868 /* ViewController.swift in Sources */,
+				02D4060A20098099003893ED /* GolfCameraViewController.swift in Sources */,
 				029B39AB2002F5E40025FE62 /* OpenCVWrapper.mm in Sources */,
 				02A811671FF4079F00B98868 /* AppDelegate.swift in Sources */,
 			);

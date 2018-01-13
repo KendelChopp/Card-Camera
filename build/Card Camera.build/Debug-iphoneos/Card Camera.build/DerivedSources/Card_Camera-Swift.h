@@ -199,10 +199,28 @@ SWIFT_CLASS("_TtC11Card_Camera11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 @class UIImageView;
+@class UILabel;
+@class UITapGestureRecognizer;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11Card_Camera24GolfCameraViewController")
+@interface GolfCameraViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified cameraView;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified cameraButton;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified cardLabel;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)imageTappedWithTapGestureRecognizer:(UITapGestureRecognizer * _Nonnull)tapGestureRecognizer;
+- (void)didReceiveMemoryWarning;
+- (IBAction)exit:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC11Card_Camera28SingleCardLiveViewController")
 @interface SingleCardLiveViewController : UIViewController
@@ -218,7 +236,6 @@ SWIFT_CLASS("_TtC11Card_Camera28SingleCardLiveViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITapGestureRecognizer;
 
 SWIFT_CLASS("_TtC11Card_Camera24SingleCardViewController")
 @interface SingleCardViewController : UIViewController

@@ -10,33 +10,28 @@ provides-dynamic-lookup:
 - "cameraView"
 - "cardLabel"
 - "didReceiveMemoryWarning"
+- "exit"
 - "imageTapped"
 - "preferredStatusBarStyle"
 - "viewDidAppear"
 - "viewDidDisappear"
 - "viewDidLoad"
 depends-top-level:
-- !private "Array"
 - "AssignmentPrecedence"
 - "Bool"
 - !private "BooleanLiteralType"
-- "CardCameraWrapper"
+- "SingleCardCamera"
 - "SingleCardViewController"
-- !private "StringLiteralType"
-- !private "UIImage"
 - "UIImageView"
 - "UILabel"
 - "UIStatusBarStyle"
 - "UITapGestureRecognizer"
 - "UIViewController"
-- !private "UnicodeScalarType"
 depends-member:
-- !private ["s23BidirectionalCollectionP", "init"]
 - !private ["So15CALayerDelegateP", "addGestureRecognizer"]
 - !private ["So15CALayerDelegateP", "isUserInteractionEnabled"]
 - !private ["So15CALayerDelegateP", "text"]
-- !private ["s7CVarArgP", "CardCameraWrapper"]
-- !private ["s7CVarArgP", "UIImage"]
+- !private ["s7CVarArgP", "SingleCardCamera"]
 - !private ["s7CVarArgP", "UIStatusBarStyle"]
 - !private ["s7CVarArgP", "UITapGestureRecognizer"]
 - !private ["s7CVarArgP", "addGestureRecognizer"]
@@ -48,8 +43,8 @@ depends-member:
 - !private ["s7CVarArgP", "imageTapped"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isUserInteractionEnabled"]
-- !private ["s7CVarArgP", "loadTrainingNumber"]
-- !private ["s7CVarArgP", "loadTrainingSuit"]
+- !private ["s7CVarArgP", "navigationController"]
+- !private ["s7CVarArgP", "popViewController"]
 - !private ["s7CVarArgP", "start"]
 - !private ["s7CVarArgP", "stop"]
 - !private ["s7CVarArgP", "text"]
@@ -58,14 +53,9 @@ depends-member:
 - ["s7CVarArgP", ""]
 - !private ["So17CardCameraWrapperC", "identifyCard"]
 - !private ["So17CardCameraWrapperC", "init"]
-- !private ["So17CardCameraWrapperC", "loadTrainingNumber"]
-- !private ["So17CardCameraWrapperC", "loadTrainingSuit"]
 - !private ["So17CardCameraWrapperC", "start"]
 - !private ["So17CardCameraWrapperC", "stop"]
-- !private ["s10CollectionP", "init"]
-- !private ["s10ComparableP", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "CardCameraWrapper"]
-- !private ["s28CustomDebugStringConvertibleP", "UIImage"]
+- !private ["s28CustomDebugStringConvertibleP", "SingleCardCamera"]
 - !private ["s28CustomDebugStringConvertibleP", "UIStatusBarStyle"]
 - !private ["s28CustomDebugStringConvertibleP", "UITapGestureRecognizer"]
 - !private ["s28CustomDebugStringConvertibleP", "addGestureRecognizer"]
@@ -77,18 +67,15 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "imageTapped"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isUserInteractionEnabled"]
-- !private ["s28CustomDebugStringConvertibleP", "loadTrainingNumber"]
-- !private ["s28CustomDebugStringConvertibleP", "loadTrainingSuit"]
+- !private ["s28CustomDebugStringConvertibleP", "navigationController"]
+- !private ["s28CustomDebugStringConvertibleP", "popViewController"]
 - !private ["s28CustomDebugStringConvertibleP", "start"]
 - !private ["s28CustomDebugStringConvertibleP", "stop"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
 - !private ["s28CustomDebugStringConvertibleP", "videoCameraWrapper"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - ["s28CustomDebugStringConvertibleP", ""]
-- !private ["s29CustomPlaygroundQuickLookableP", "init"]
-- !private ["s17CustomReflectableP", "init"]
-- !private ["s23CustomStringConvertibleP", "CardCameraWrapper"]
-- !private ["s23CustomStringConvertibleP", "UIImage"]
+- !private ["s23CustomStringConvertibleP", "SingleCardCamera"]
 - !private ["s23CustomStringConvertibleP", "UIStatusBarStyle"]
 - !private ["s23CustomStringConvertibleP", "UITapGestureRecognizer"]
 - !private ["s23CustomStringConvertibleP", "addGestureRecognizer"]
@@ -100,18 +87,15 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "imageTapped"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isUserInteractionEnabled"]
-- !private ["s23CustomStringConvertibleP", "loadTrainingNumber"]
-- !private ["s23CustomStringConvertibleP", "loadTrainingSuit"]
+- !private ["s23CustomStringConvertibleP", "navigationController"]
+- !private ["s23CustomStringConvertibleP", "popViewController"]
 - !private ["s23CustomStringConvertibleP", "start"]
 - !private ["s23CustomStringConvertibleP", "stop"]
 - !private ["s23CustomStringConvertibleP", "text"]
 - !private ["s23CustomStringConvertibleP", "videoCameraWrapper"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - ["s23CustomStringConvertibleP", ""]
-- !private ["s9DecodableP", "init"]
-- !private ["s9EncodableP", "init"]
-- !private ["s9EquatableP", "CardCameraWrapper"]
-- !private ["s9EquatableP", "UIImage"]
+- !private ["s9EquatableP", "SingleCardCamera"]
 - !private ["s9EquatableP", "UIStatusBarStyle"]
 - !private ["s9EquatableP", "UITapGestureRecognizer"]
 - !private ["s9EquatableP", "addGestureRecognizer"]
@@ -124,19 +108,15 @@ depends-member:
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "isUserInteractionEnabled"]
 - !private ["s9EquatableP", "lightContent"]
-- !private ["s9EquatableP", "loadTrainingNumber"]
-- !private ["s9EquatableP", "loadTrainingSuit"]
+- !private ["s9EquatableP", "navigationController"]
+- !private ["s9EquatableP", "popViewController"]
 - !private ["s9EquatableP", "start"]
 - !private ["s9EquatableP", "stop"]
 - !private ["s9EquatableP", "text"]
 - !private ["s9EquatableP", "videoCameraWrapper"]
 - !private ["s9EquatableP", "viewDidLoad"]
 - ["s9EquatableP", ""]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
-- !private ["s8HashableP", "CardCameraWrapper"]
-- !private ["s8HashableP", "UIImage"]
+- !private ["s8HashableP", "SingleCardCamera"]
 - !private ["s8HashableP", "UIStatusBarStyle"]
 - !private ["s8HashableP", "UITapGestureRecognizer"]
 - !private ["s8HashableP", "addGestureRecognizer"]
@@ -149,18 +129,15 @@ depends-member:
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "isUserInteractionEnabled"]
 - !private ["s8HashableP", "lightContent"]
-- !private ["s8HashableP", "loadTrainingNumber"]
-- !private ["s8HashableP", "loadTrainingSuit"]
+- !private ["s8HashableP", "navigationController"]
+- !private ["s8HashableP", "popViewController"]
 - !private ["s8HashableP", "start"]
 - !private ["s8HashableP", "stop"]
 - !private ["s8HashableP", "text"]
 - !private ["s8HashableP", "videoCameraWrapper"]
 - !private ["s8HashableP", "viewDidLoad"]
 - ["s8HashableP", ""]
-- !private ["s25LosslessStringConvertibleP", "init"]
-- !private ["s10MirrorPathP", "init"]
-- !private ["So8NSCodingP", "CardCameraWrapper"]
-- !private ["So8NSCodingP", "UIImage"]
+- !private ["So8NSCodingP", "SingleCardCamera"]
 - !private ["So8NSCodingP", "UIStatusBarStyle"]
 - !private ["So8NSCodingP", "UITapGestureRecognizer"]
 - !private ["So8NSCodingP", "addGestureRecognizer"]
@@ -171,13 +148,13 @@ depends-member:
 - !private ["So8NSCodingP", "imageTapped"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isUserInteractionEnabled"]
+- !private ["So8NSCodingP", "navigationController"]
+- !private ["So8NSCodingP", "popViewController"]
 - !private ["So8NSCodingP", "text"]
 - !private ["So8NSCodingP", "videoCameraWrapper"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - ["So8NSCodingP", ""]
-- !private ["So9NSCopyingP", "init"]
-- !private ["So26NSExtensionRequestHandlingP", "CardCameraWrapper"]
-- !private ["So26NSExtensionRequestHandlingP", "UIImage"]
+- !private ["So26NSExtensionRequestHandlingP", "SingleCardCamera"]
 - !private ["So26NSExtensionRequestHandlingP", "UIStatusBarStyle"]
 - !private ["So26NSExtensionRequestHandlingP", "UITapGestureRecognizer"]
 - !private ["So26NSExtensionRequestHandlingP", "cameraButton"]
@@ -186,15 +163,13 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
 - !private ["So26NSExtensionRequestHandlingP", "imageTapped"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "navigationController"]
+- !private ["So26NSExtensionRequestHandlingP", "popViewController"]
 - !private ["So26NSExtensionRequestHandlingP", "videoCameraWrapper"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So26NSExtensionRequestHandlingP", ""]
-- !private ["So21NSItemProviderReadingP", "init"]
-- !private ["So21NSItemProviderWritingP", "init"]
-- !private ["So16NSMutableCopyingP", "init"]
 - ["So8NSObjectC", "Bool"]
-- ["So8NSObjectC", "CardCameraWrapper"]
-- !private ["So8NSObjectC", "UIImage"]
+- ["So8NSObjectC", "SingleCardCamera"]
 - ["So8NSObjectC", "UIImageView"]
 - ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "UIStatusBarStyle"]
@@ -204,12 +179,13 @@ depends-member:
 - ["So8NSObjectC", "cameraView"]
 - ["So8NSObjectC", "cardLabel"]
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
+- ["So8NSObjectC", "exit"]
 - !private ["So8NSObjectC", "identifyCard"]
 - ["So8NSObjectC", "imageTapped"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isUserInteractionEnabled"]
-- !private ["So8NSObjectC", "loadTrainingNumber"]
-- !private ["So8NSObjectC", "loadTrainingSuit"]
+- !private ["So8NSObjectC", "navigationController"]
+- !private ["So8NSObjectC", "popViewController"]
 - ["So8NSObjectC", "preferredStatusBarStyle"]
 - !private ["So8NSObjectC", "start"]
 - !private ["So8NSObjectC", "stop"]
@@ -218,8 +194,7 @@ depends-member:
 - ["So8NSObjectC", "viewDidAppear"]
 - ["So8NSObjectC", "viewDidDisappear"]
 - ["So8NSObjectC", "viewDidLoad"]
-- !private ["So16NSObjectProtocolP", "CardCameraWrapper"]
-- !private ["So16NSObjectProtocolP", "UIImage"]
+- !private ["So16NSObjectProtocolP", "SingleCardCamera"]
 - !private ["So16NSObjectProtocolP", "UIStatusBarStyle"]
 - !private ["So16NSObjectProtocolP", "UITapGestureRecognizer"]
 - !private ["So16NSObjectProtocolP", "addGestureRecognizer"]
@@ -231,22 +206,21 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "imageTapped"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "isUserInteractionEnabled"]
-- !private ["So16NSObjectProtocolP", "loadTrainingNumber"]
-- !private ["So16NSObjectProtocolP", "loadTrainingSuit"]
+- !private ["So16NSObjectProtocolP", "navigationController"]
+- !private ["So16NSObjectProtocolP", "popViewController"]
 - !private ["So16NSObjectProtocolP", "start"]
 - !private ["So16NSObjectProtocolP", "stop"]
 - !private ["So16NSObjectProtocolP", "text"]
 - !private ["So16NSObjectProtocolP", "videoCameraWrapper"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - ["So16NSObjectProtocolP", ""]
-- !private ["So14NSSecureCodingP", "init"]
-- !private ["So8NSStringC", "init"]
-- !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s16RawRepresentableP", "lightContent"]
-- !private ["s8SequenceP", "init"]
+- !private ["So16SingleCardCameraC", "identifyCard"]
+- !private ["So16SingleCardCameraC", "init"]
+- !private ["So16SingleCardCameraC", "start"]
+- !private ["So16SingleCardCameraC", "stop"]
 - ["11Card_Camera06SingleA14ViewControllerC", "Bool"]
-- ["11Card_Camera06SingleA14ViewControllerC", "CardCameraWrapper"]
-- !private ["11Card_Camera06SingleA14ViewControllerC", "UIImage"]
+- ["11Card_Camera06SingleA14ViewControllerC", "SingleCardCamera"]
 - ["11Card_Camera06SingleA14ViewControllerC", "UIImageView"]
 - ["11Card_Camera06SingleA14ViewControllerC", "UILabel"]
 - ["11Card_Camera06SingleA14ViewControllerC", "UIStatusBarStyle"]
@@ -256,28 +230,24 @@ depends-member:
 - ["11Card_Camera06SingleA14ViewControllerC", "cardLabel"]
 - ["11Card_Camera06SingleA14ViewControllerC", "deinit"]
 - ["11Card_Camera06SingleA14ViewControllerC", "didReceiveMemoryWarning"]
+- ["11Card_Camera06SingleA14ViewControllerC", "exit"]
 - ["11Card_Camera06SingleA14ViewControllerC", "imageTapped"]
 - ["11Card_Camera06SingleA14ViewControllerC", "init"]
+- !private ["11Card_Camera06SingleA14ViewControllerC", "navigationController"]
 - ["11Card_Camera06SingleA14ViewControllerC", "preferredStatusBarStyle"]
 - ["11Card_Camera06SingleA14ViewControllerC", "videoCameraWrapper"]
 - ["11Card_Camera06SingleA14ViewControllerC", "viewDidAppear"]
 - ["11Card_Camera06SingleA14ViewControllerC", "viewDidDisappear"]
 - ["11Card_Camera06SingleA14ViewControllerC", "viewDidLoad"]
-- !private ["SS", "init"]
-- !private ["s14StringProtocolP", "init"]
-- !private ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", "init"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "addGestureRecognizer"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isUserInteractionEnabled"]
 - !private ["So29UIAccessibilityIdentificationP", "addGestureRecognizer"]
-- !private ["So29UIAccessibilityIdentificationP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "isUserInteractionEnabled"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
 - !private ["So12UIAppearanceP", "addGestureRecognizer"]
 - !private ["So12UIAppearanceP", "isUserInteractionEnabled"]
 - !private ["So12UIAppearanceP", "text"]
-- !private ["So21UIAppearanceContainerP", "CardCameraWrapper"]
-- !private ["So21UIAppearanceContainerP", "UIImage"]
+- !private ["So21UIAppearanceContainerP", "SingleCardCamera"]
 - !private ["So21UIAppearanceContainerP", "UIStatusBarStyle"]
 - !private ["So21UIAppearanceContainerP", "UITapGestureRecognizer"]
 - !private ["So21UIAppearanceContainerP", "addGestureRecognizer"]
@@ -288,12 +258,13 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "imageTapped"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "isUserInteractionEnabled"]
+- !private ["So21UIAppearanceContainerP", "navigationController"]
+- !private ["So21UIAppearanceContainerP", "popViewController"]
 - !private ["So21UIAppearanceContainerP", "text"]
 - !private ["So21UIAppearanceContainerP", "videoCameraWrapper"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - ["So21UIAppearanceContainerP", ""]
-- !private ["So18UIContentContainerP", "CardCameraWrapper"]
-- !private ["So18UIContentContainerP", "UIImage"]
+- !private ["So18UIContentContainerP", "SingleCardCamera"]
 - !private ["So18UIContentContainerP", "UIStatusBarStyle"]
 - !private ["So18UIContentContainerP", "UITapGestureRecognizer"]
 - !private ["So18UIContentContainerP", "cameraButton"]
@@ -302,6 +273,8 @@ depends-member:
 - !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
 - !private ["So18UIContentContainerP", "imageTapped"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "navigationController"]
+- !private ["So18UIContentContainerP", "popViewController"]
 - !private ["So18UIContentContainerP", "videoCameraWrapper"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - ["So18UIContentContainerP", ""]
@@ -312,8 +285,7 @@ depends-member:
 - !private ["So13UIDynamicItemP", "addGestureRecognizer"]
 - !private ["So13UIDynamicItemP", "isUserInteractionEnabled"]
 - !private ["So13UIDynamicItemP", "text"]
-- !private ["So18UIFocusEnvironmentP", "CardCameraWrapper"]
-- !private ["So18UIFocusEnvironmentP", "UIImage"]
+- !private ["So18UIFocusEnvironmentP", "SingleCardCamera"]
 - !private ["So18UIFocusEnvironmentP", "UIStatusBarStyle"]
 - !private ["So18UIFocusEnvironmentP", "UITapGestureRecognizer"]
 - !private ["So18UIFocusEnvironmentP", "addGestureRecognizer"]
@@ -324,6 +296,8 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "imageTapped"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "isUserInteractionEnabled"]
+- !private ["So18UIFocusEnvironmentP", "navigationController"]
+- !private ["So18UIFocusEnvironmentP", "popViewController"]
 - !private ["So18UIFocusEnvironmentP", "text"]
 - !private ["So18UIFocusEnvironmentP", "videoCameraWrapper"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
@@ -332,13 +306,11 @@ depends-member:
 - !private ["So11UIFocusItemP", "isUserInteractionEnabled"]
 - !private ["So11UIFocusItemP", "text"]
 - !private ["So19UIGestureRecognizerC", "init"]
-- !private ["So7UIImageC", "init"]
 - !private ["So11UIImageViewC", "addGestureRecognizer"]
 - !private ["So11UIImageViewC", "isUserInteractionEnabled"]
-- !private ["So39UIItemProviderPresentationSizeProvidingP", "init"]
 - !private ["So7UILabelC", "text"]
-- !private ["So30UIPasteConfigurationSupportingP", "CardCameraWrapper"]
-- !private ["So30UIPasteConfigurationSupportingP", "UIImage"]
+- !private ["So22UINavigationControllerC", "popViewController"]
+- !private ["So30UIPasteConfigurationSupportingP", "SingleCardCamera"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIStatusBarStyle"]
 - !private ["So30UIPasteConfigurationSupportingP", "UITapGestureRecognizer"]
 - !private ["So30UIPasteConfigurationSupportingP", "addGestureRecognizer"]
@@ -349,13 +321,14 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "imageTapped"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "isUserInteractionEnabled"]
+- !private ["So30UIPasteConfigurationSupportingP", "navigationController"]
+- !private ["So30UIPasteConfigurationSupportingP", "popViewController"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
 - !private ["So30UIPasteConfigurationSupportingP", "videoCameraWrapper"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - ["So11UIResponderC", "Bool"]
-- ["So11UIResponderC", "CardCameraWrapper"]
-- !private ["So11UIResponderC", "UIImage"]
+- ["So11UIResponderC", "SingleCardCamera"]
 - ["So11UIResponderC", "UIImageView"]
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "UIStatusBarStyle"]
@@ -365,17 +338,19 @@ depends-member:
 - ["So11UIResponderC", "cameraView"]
 - ["So11UIResponderC", "cardLabel"]
 - ["So11UIResponderC", "didReceiveMemoryWarning"]
+- ["So11UIResponderC", "exit"]
 - ["So11UIResponderC", "imageTapped"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "isUserInteractionEnabled"]
+- !private ["So11UIResponderC", "navigationController"]
+- !private ["So11UIResponderC", "popViewController"]
 - ["So11UIResponderC", "preferredStatusBarStyle"]
 - !private ["So11UIResponderC", "text"]
 - ["So11UIResponderC", "videoCameraWrapper"]
 - ["So11UIResponderC", "viewDidAppear"]
 - ["So11UIResponderC", "viewDidDisappear"]
 - ["So11UIResponderC", "viewDidLoad"]
-- !private ["So30UIResponderStandardEditActionsP", "CardCameraWrapper"]
-- !private ["So30UIResponderStandardEditActionsP", "UIImage"]
+- !private ["So30UIResponderStandardEditActionsP", "SingleCardCamera"]
 - !private ["So30UIResponderStandardEditActionsP", "UIStatusBarStyle"]
 - !private ["So30UIResponderStandardEditActionsP", "UITapGestureRecognizer"]
 - !private ["So30UIResponderStandardEditActionsP", "addGestureRecognizer"]
@@ -386,12 +361,13 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "imageTapped"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "isUserInteractionEnabled"]
+- !private ["So30UIResponderStandardEditActionsP", "navigationController"]
+- !private ["So30UIResponderStandardEditActionsP", "popViewController"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
 - !private ["So30UIResponderStandardEditActionsP", "videoCameraWrapper"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - ["So30UIResponderStandardEditActionsP", ""]
-- !private ["So16UIStateRestoringP", "CardCameraWrapper"]
-- !private ["So16UIStateRestoringP", "UIImage"]
+- !private ["So16UIStateRestoringP", "SingleCardCamera"]
 - !private ["So16UIStateRestoringP", "UIStatusBarStyle"]
 - !private ["So16UIStateRestoringP", "UITapGestureRecognizer"]
 - !private ["So16UIStateRestoringP", "cameraButton"]
@@ -400,13 +376,14 @@ depends-member:
 - !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
 - !private ["So16UIStateRestoringP", "imageTapped"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "navigationController"]
+- !private ["So16UIStateRestoringP", "popViewController"]
 - !private ["So16UIStateRestoringP", "videoCameraWrapper"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - ["So16UIStateRestoringP", ""]
 - !private ["SC16UIStatusBarStyleO", "lightContent"]
 - !private ["So22UITapGestureRecognizerC", "init"]
-- !private ["So18UITraitEnvironmentP", "CardCameraWrapper"]
-- !private ["So18UITraitEnvironmentP", "UIImage"]
+- !private ["So18UITraitEnvironmentP", "SingleCardCamera"]
 - !private ["So18UITraitEnvironmentP", "UIStatusBarStyle"]
 - !private ["So18UITraitEnvironmentP", "UITapGestureRecognizer"]
 - !private ["So18UITraitEnvironmentP", "addGestureRecognizer"]
@@ -417,6 +394,8 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "imageTapped"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "isUserInteractionEnabled"]
+- !private ["So18UITraitEnvironmentP", "navigationController"]
+- !private ["So18UITraitEnvironmentP", "popViewController"]
 - !private ["So18UITraitEnvironmentP", "text"]
 - !private ["So18UITraitEnvironmentP", "videoCameraWrapper"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
@@ -425,8 +404,7 @@ depends-member:
 - !private ["So6UIViewC", "isUserInteractionEnabled"]
 - !private ["So6UIViewC", "text"]
 - ["So16UIViewControllerC", "Bool"]
-- ["So16UIViewControllerC", "CardCameraWrapper"]
-- !private ["So16UIViewControllerC", "UIImage"]
+- ["So16UIViewControllerC", "SingleCardCamera"]
 - ["So16UIViewControllerC", "UIImageView"]
 - ["So16UIViewControllerC", "UILabel"]
 - ["So16UIViewControllerC", "UIStatusBarStyle"]
@@ -435,29 +413,21 @@ depends-member:
 - ["So16UIViewControllerC", "cameraView"]
 - ["So16UIViewControllerC", "cardLabel"]
 - ["So16UIViewControllerC", "didReceiveMemoryWarning"]
+- ["So16UIViewControllerC", "exit"]
 - ["So16UIViewControllerC", "imageTapped"]
 - ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "navigationController"]
+- !private ["So16UIViewControllerC", "popViewController"]
 - ["So16UIViewControllerC", "preferredStatusBarStyle"]
 - ["So16UIViewControllerC", "videoCameraWrapper"]
 - ["So16UIViewControllerC", "viewDidAppear"]
 - ["So16UIViewControllerC", "viewDidDisappear"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", ""]
-- !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addGestureRecognizer"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isUserInteractionEnabled"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
-- !private ["s26_ExpressibleByImageLiteralP", "init"]
-- !private ["s33_ExpressibleByStringInterpolationP", "init"]
-- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
-- !private ["s10_IndexableP", "init"]
-- !private ["s14_IndexableBaseP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "CardCameraWrapper"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "SingleCardCamera"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIStatusBarStyle"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UITapGestureRecognizer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addGestureRecognizer"]
@@ -469,55 +439,29 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "imageTapped"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isUserInteractionEnabled"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "loadTrainingNumber"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "loadTrainingSuit"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "navigationController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "popViewController"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "start"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "stop"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "videoCameraWrapper"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
-- !private ["s21_ObjectiveCBridgeableP", "init"]
-- !private ["s26_RangeReplaceableIndexableP", "init"]
-- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- !private "s23BidirectionalCollectionP"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
 - !private "So17CardCameraWrapperC"
-- !private "s10CollectionP"
-- !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
-- !private "s29CustomPlaygroundQuickLookableP"
-- !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "s9DecodableP"
-- !private "s9EncodableP"
 - "s9EquatableP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
-- !private "s25LosslessStringConvertibleP"
-- !private "s10MirrorPathP"
 - "So8NSCodingP"
-- !private "So9NSCopyingP"
 - "So26NSExtensionRequestHandlingP"
-- !private "So21NSItemProviderReadingP"
-- !private "So21NSItemProviderWritingP"
-- !private "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
-- !private "So14NSSecureCodingP"
-- !private "So8NSStringC"
-- !private "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
-- !private "s8SequenceP"
+- !private "So16SingleCardCameraC"
 - "11Card_Camera06SingleA14ViewControllerC"
-- !private "SS"
-- !private "s14StringProtocolP"
-- !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
@@ -529,10 +473,9 @@ depends-nominal:
 - "So18UIFocusEnvironmentP"
 - !private "So11UIFocusItemP"
 - !private "So19UIGestureRecognizerC"
-- !private "So7UIImageC"
 - !private "So11UIImageViewC"
-- !private "So39UIItemProviderPresentationSizeProvidingP"
 - !private "So7UILabelC"
+- !private "So22UINavigationControllerC"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -542,21 +485,8 @@ depends-nominal:
 - "So18UITraitEnvironmentP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
-- !private "s23_BidirectionalIndexableP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- !private "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
-- !private "s26_ExpressibleByImageLiteralP"
-- !private "s33_ExpressibleByStringInterpolationP"
-- !private "s35_HasCustomAnyHashableRepresentationP"
-- !private "s10_IndexableP"
-- !private "s14_IndexableBaseP"
 - "10Foundation27_KeyValueCodingAndObservingP"
-- !private "s21_ObjectiveCBridgeableP"
-- !private "s26_RangeReplaceableIndexableP"
-- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
@@ -584,4 +514,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "46173701d681201bdf35735180d1cfe6"
+interface-hash: "b23acf636d232492db134afdd404de10"
